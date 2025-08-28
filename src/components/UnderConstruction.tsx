@@ -1,22 +1,36 @@
-// src/components/UnderConstruction.tsx - VERSÃO FINAL
+// src/components/UnderConstruction.tsx - VERSÃO FINAL E CORRIGIDA
 
-// Forçando um novo deploy para atualizar o cache da imagem.
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './UnderConstruction.module.css';
 
-import logo from '../assets/alpha-logo.png';  
+// A importação dos arquivos. Se os nomes na sua pasta estiverem
+// exatamente como abaixo, vai funcionar.
+import logo from '../assets/alpha-logo.png'; 
 import whatsappIcon from '../assets/whatsapp.png';
 import instagramIcon from '../assets/instagram.png';
 import emailIcon from '../assets/email.png';
 
 const UnderConstruction: React.FC = () => {
+  // Efeito para o spotlight seguir o mouse
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   const currentYear = new Date().getFullYear();
 
-  // ***** COLOQUE SUAS INFORMAÇÕES AQUI *****
-  const whatsappLink = "https://wa.me/5534991405711"; // <<< COLOQUE SEU NÚMERO DE WHATSAPP AQUI
-  const instagramLink = "https://instagram.com/alphatecnologia__"; // <<< COLOQUE SEU INSTAGRAM AQUI
-  const emailLink = "mailto:contato@alphatecnologia.com"; // <<< COLOQUE SEU EMAIL AQUI
+  // ***** COLOQUE SUAS INFORMAÇÕES DE CONTATO AQUI *****
+  const whatsappLink = "https://wa.me/5534991405711";
+  const instagramLink = "https://instagram.com/alphatecnologia__";
+  const emailLink = "mailto:contato@alphatecnologia.com";
 
   return (
     <div className={styles.card}>
@@ -40,7 +54,7 @@ const UnderConstruction: React.FC = () => {
       </div>
       <footer className={styles.footer}>
         &copy; {currentYear} Alpha Tecnologia. Todos os direitos reservados.<br/>
-        Ituiutaba, MG.
+        Ituiutaba, MG. Desenvolvido por Alpha Tecnologia.
       </footer>
     </div>
   );
