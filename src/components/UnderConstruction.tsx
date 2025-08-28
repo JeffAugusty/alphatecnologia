@@ -1,5 +1,7 @@
 // src/components/UnderConstruction.tsx - VERSÃO FINAL
 
+// Forçando um novo deploy para atualizar o cache da imagem.
+
 import React from 'react';
 import styles from './UnderConstruction.module.css';
 
