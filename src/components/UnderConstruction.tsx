@@ -5,7 +5,7 @@
 import React from 'react';
 import styles from './UnderConstruction.module.css';
 
-import logo from '../assets/logo.png'; 
+import logo from '../assets/alpha-logo.png';  
 import whatsappIcon from '../assets/whatsapp.png';
 import instagramIcon from '../assets/instagram.png';
 import emailIcon from '../assets/email.png';
