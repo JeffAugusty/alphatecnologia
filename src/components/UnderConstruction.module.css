@@ -1,0 +1,114 @@
+/* src/components/UnderConstruction.module.css - VERSÃO FINAL */
+
+.card {
+  width: 90vw;
+  max-width: 550px; /* << Reduzido para ficar mais compacto */
+  padding: 2.5rem;
+  
+  background-color: rgba(18, 18, 20, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Efeito de brilho sutil no topo */
+  border-top: 1px solid rgba(130, 87, 229, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem; /* Ajuste fino no espaçamento */
+}
+
+.logo {
+  max-width: 2px; /* Reduzido para um look mais refinado */
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  color: #E1E1E6;
+  text-shadow: 0 0 10px rgba(130, 87, 229, 0.2);
+}
+
+.subtitle {
+  font-size: 1rem;
+  max-width: 90%;
+  color: #A8A8B3;
+  line-height: 1.6;
+}
+
+.socialLinks {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+  animation: pulse-button 3s infinite ease-in-out;
+}
+
+.socialButton:hover {
+  background-color: var(--color-accent-orange);
+  border-color: var(--color-accent-orange);
+  transform: scale(1.15);
+  animation: none; /* Pausa a animação de pulso no hover */
+}
+
+.socialButton img {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s ease;
+  filter: brightness(0.6) saturate(0%); /* Torna a imagem mais escura, quase preta */
+  transform: scale(0.9); /* Já estava aqui, mantive */
+}
+
+.socialButton:hover img {
+    transform: scale(0.9);
+}
+
+@keyframes pulse-button {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(155, 84, 3, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(130, 87, 229, 0);
+  }
+}
+
+.footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: #7C7C8A;
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .card { padding: 2rem 1.5rem; }
+  .title { font-size: 1.8rem; }
+}
